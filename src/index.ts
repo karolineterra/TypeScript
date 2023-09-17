@@ -1,34 +1,12 @@
-//classes
+//generics
 
-class Character {
-  private name?: string;
-  readonly stregth: number;
-  skill: number;
-
-  constructor(name: string, stregth: number, skill: number) {
-    this.name = name;
-    this.stregth = stregth;
-    this.skill = skill;
-  }
-
-  attack(): void {
-    console.log(`Attack with ${this.stregth} points`);
-  }
+function concatArray<T>(...itens: T[]): T[]{
+    return new Array().concat(...itens);
 }
 
-//Character: superclass
-//Magician: subclass
-class Magician extends Character {
-  magicPoints: number;
-  constructor(
-    name: string,
-    stregth: number,
-    skill: number,
-    magicPoints: number
-  ) {
-    super(name, stregth, skill);
-    this.magicPoints = magicPoints;
-  }
-}
+const numArray = concatArray<number[]>([1,5], [3]);
+const stgArray = concatArray<string[]>(["Karoline", "Terra"], ["Goku"])
 
-const p2 = new Magician("Mago", 9, 30, 100);
+console.log(numArray);
+
+console.log(stgArray)
