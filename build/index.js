@@ -1,9 +1,12 @@
 "use strict";
-function addNumber(x, y) {
-    return x + y;
-}
-function addToHello(name) {
-    return `Hello ${name}`;
-}
-let soma = addNumber(4, 7);
-console.log(addToHello("Karoline"));
+//Interfaces (type x interface)
+const bot = {
+    id: 1,
+    name: "megaman",
+};
+const bot2 = {
+    id: 1,
+    name: "megaman",
+};
+console.log(bot);
+console.log(bot2);

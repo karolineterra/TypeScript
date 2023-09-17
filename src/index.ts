@@ -1,22 +1,24 @@
-function addNumber(x: number, y:number): number {
-    return x + y;
+//Interfaces (type x interface)
+
+type robot = {
+    readonly id:number | string,
+    name:string,
 }
 
-function addToHello(name: string) {
-    return `Hello ${name}`;
+interface robot2 {
+    readonly id:number | string,
+    name:string,
 }
 
-function CallToPhone(phone: number | string): number | string {
-    return phone
-} 
-
-async function getDatabase(id: number): Promise<number | string> {
-    return "karol";
+const bot: robot = {
+    id: 1,
+    name: "megaman",
 }
 
-let soma: number = addNumber(4, 7);
+const bot2: robot2 = {
+    id: 1,
+    name: "megaman",
+}
 
-console.log(CallToPhone("1113311"));
-console.log(CallToPhone(12343423));
-
-
+console.log(bot);
+console.log(bot2);
