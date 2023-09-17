@@ -1,24 +1,34 @@
-//Interfaces (type x interface)
+//classes
 
-type robot = {
-    readonly id:number | string,
-    name:string,
+class Character {
+  private name?: string;
+  readonly stregth: number;
+  skill: number;
+
+  constructor(name: string, stregth: number, skill: number) {
+    this.name = name;
+    this.stregth = stregth;
+    this.skill = skill;
+  }
+
+  attack(): void {
+    console.log(`Attack with ${this.stregth} points`);
+  }
 }
 
-interface robot2 {
-    readonly id:number | string,
-    name:string,
+//Character: superclass
+//Magician: subclass
+class Magician extends Character {
+  magicPoints: number;
+  constructor(
+    name: string,
+    stregth: number,
+    skill: number,
+    magicPoints: number
+  ) {
+    super(name, stregth, skill);
+    this.magicPoints = magicPoints;
+  }
 }
 
-const bot: robot = {
-    id: 1,
-    name: "megaman",
-}
-
-const bot2: robot2 = {
-    id: 1,
-    name: "megaman",
-}
-
-console.log(bot);
-console.log(bot2);
+const p2 = new Magician("Mago", 9, 30, 100);
